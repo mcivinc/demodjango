@@ -1,0 +1,20 @@
+li a {
+    color: greenyellow;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+body {
+    background: #DDD8D8;
+}
+
+#sidenav {
+    margin-top: 10px;
+}
+
+#categories {
+    margin-top: 10px;
+}

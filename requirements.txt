@@ -1,0 +1,9 @@
+django~=3.1
+django_extensions
+django-debug-toolbar
+psycopg2-binary
+pandas
+djangosaml2
+bokeh~=2.1.1
+tornado~=6.0.4
+Werkzeug

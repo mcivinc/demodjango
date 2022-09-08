@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    {{ script | safe }}
+
+            <!-- Main Polls -->
+            <div class="col-md">
+                <div class="card-md bg-light" id="maincontent">
+                    <h1>Polls App</h1>
+                    {% if latest_question_list %}
+                        <ul>
+                            {% for question in latest_question_list %}
+                                <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No polls are available.</p>
+                    {% endif %}
+                </div>
+
+                <div class="card-md bg-light" id="localbokehapp">
+                    <h1>Local Static Bokeh App</h1>
+                    <div id="line">
+                        {{ div | safe }}
+                    </div>
+                </div>
+
+                <div class="card-md bg-light" id="serverbokehapp">
+                    <h1>Bokeh Internet Server Side App</h1>
+                    <div id="sine">
+                        {{ server_script | safe }}
+                    </div>
+                </div>
+
+                <div class="card-md bg-light" id="app1">
+                    <h1>Bokeh App1</h1>
+                    <div id="app1d">
+                        {{ rt_div | safe }}
+                    </div>
+                </div>
+            </div>
+
+<hr>
+{% endblock %}
